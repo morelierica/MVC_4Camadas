@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema.Model;
+using Sistema.Entidades;
 
 namespace Sistema.View
 {
@@ -15,6 +17,6 @@ namespace Sistema.View
         public frmLogin()
         {
             InitializeComponent();
-        }
+        }     
     }
 }

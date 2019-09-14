@@ -116,7 +116,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";
-            this.Text = "Login";
+            this.Text = "Login";            
             this.ResumeLayout(false);
             this.PerformLayout();
 

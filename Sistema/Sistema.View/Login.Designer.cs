@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMensagem = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -57,14 +57,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Senha:";
             // 
-            // label3
+            // lblMensagem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "...";
+            this.lblMensagem.AutoSize = true;
+            this.lblMensagem.Location = new System.Drawing.Point(71, 158);
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Size = new System.Drawing.Size(16, 13);
+            this.lblMensagem.TabIndex = 2;
+            this.lblMensagem.Text = "...";
             // 
             // txtUsuario
             // 
@@ -92,6 +92,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnSair
             // 
@@ -112,11 +113,14 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmLogin";
-            this.Text = "Login";            
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +130,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogin;

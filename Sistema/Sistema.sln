@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.View", "Sistema.View\Sistema.View.csproj", "{04079678-D496-4066-99C7-3204ECB1E4CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Model", "Sistema.Model\Sistema.Model.csproj", "{C193918B-5DDD-497F-AB58-68F95DDBF2E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Model", "Sistema.Model\Sistema.Model.csproj", "{C193918B-5DDD-497F-AB58-68F95DDBF2E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.DAO", "Sistema.DAO\Sistema.DAO.csproj", "{15B1B733-485A-4433-981B-109852BC0FF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sistema.Entidades", "Sistema.Entidades\Sistema.Entidades.csproj", "{EB753BAA-9906-439A-B135-463C9919F61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Entidades", "Sistema.Entidades\Sistema.Entidades.csproj", "{EB753BAA-9906-439A-B135-463C9919F61C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.DAO", "Sistema.DAO\Sistema.DAO.csproj", "{CE8FBEE9-4159-4431-866E-F337B2744F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{C193918B-5DDD-497F-AB58-68F95DDBF2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C193918B-5DDD-497F-AB58-68F95DDBF2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C193918B-5DDD-497F-AB58-68F95DDBF2E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{15B1B733-485A-4433-981B-109852BC0FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15B1B733-485A-4433-981B-109852BC0FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15B1B733-485A-4433-981B-109852BC0FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15B1B733-485A-4433-981B-109852BC0FF1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB753BAA-9906-439A-B135-463C9919F61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB753BAA-9906-439A-B135-463C9919F61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB753BAA-9906-439A-B135-463C9919F61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB753BAA-9906-439A-B135-463C9919F61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8FBEE9-4159-4431-866E-F337B2744F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8FBEE9-4159-4431-866E-F337B2744F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8FBEE9-4159-4431-866E-F337B2744F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8FBEE9-4159-4431-866E-F337B2744F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

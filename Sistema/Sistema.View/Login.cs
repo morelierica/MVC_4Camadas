@@ -22,7 +22,7 @@ namespace Sistema.View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             frmCadUsuario f = new frmCadUsuario();
-            f.Show();            
+            f.Show();    
         }
     }
 }

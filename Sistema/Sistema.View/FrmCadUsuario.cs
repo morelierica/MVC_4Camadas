@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema.Model;
+using Sistema.Entidades;
 
 namespace Sistema.View
 {
-    public partial class frmCadUsuario : Form
+    public partial class frmCadUsuario : Form    
     {
+        UserEnt objTabela = new UserEnt();        
+
         public frmCadUsuario()
         {
             InitializeComponent();
@@ -35,6 +39,27 @@ namespace Sistema.View
                     break;
 
                 case "Salvar":
+                    try
+                    {
+                        objTabela.Name = txtNome.Text;
+                        objTabela.Login = txtUsuario.Text;
+                        objTabela.Password = txtSenha.Text;
+                    
+                        int x = UserModel.Insert(objTabela);
+
+                        if (x > 0)
+                        {
+                            MessageBox.Show("Usuário {0} inserido com sucesso!", txtNome.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao Inserir Usuário");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu o seguinte erro ao Salvar " + ex.Message);                        
+                    }
                     break;
 
                 case "Excluir":

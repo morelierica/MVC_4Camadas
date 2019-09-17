@@ -8,5 +8,9 @@ namespace Sistema.Model
 {
     public class UserModel
     {
+        public static int Insert(UserEnt objTabela)
+        {
+            return new UserDAO().Insert(objTabela);
+        }
     }
 }

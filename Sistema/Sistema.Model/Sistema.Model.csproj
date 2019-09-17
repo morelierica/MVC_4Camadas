@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Sistema.DAO\Sistema.DAO.csproj" />
     <ProjectReference Include="..\Sistema.Entidades\Sistema.Entidades.csproj" />
   </ItemGroup>

@@ -49,7 +49,7 @@ namespace Sistema.View
 
                         if (x > 0)
                         {
-                            MessageBox.Show("Usuário {0} inserido com sucesso!", txtNome.Text);
+                            MessageBox.Show(string.Format("Usuário {0} inserido com sucesso!", txtNome.Text), "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -92,6 +92,8 @@ namespace Sistema.View
         {
             opc = "Salvar";
             IniciarOpc();
+            listarGrid();
+            LimparCampos();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -104,6 +106,28 @@ namespace Sistema.View
         {
             opc = "Editar";
             IniciarOpc();
+        }
+
+        private void listarGrid()
+        {
+            try
+            {
+                List<UserEnt> lista = new List<UserEnt>();
+                lista = new UserModel().Lista();
+                grid.AutoGenerateColumns = false;
+                grid.DataSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+                throw;
+            }
+        }
+
+        private void frmCadUsuario_Load(object sender, EventArgs e)
+        {
+            listarGrid();
         }
     }
 }

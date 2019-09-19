@@ -12,5 +12,10 @@ namespace Sistema.Model
         {
             return new UserDAO().Insert(objTabela);
         }
+
+        public List<UserEnt> Lista()
+        {
+            return new UserDAO().Lista();
+        }
     }
 }

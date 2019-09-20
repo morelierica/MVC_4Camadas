@@ -30,6 +30,45 @@ namespace Sistema.DAO
             }           
         }
 
+        public UserEnt Login(UserEnt obj)
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = Properties.Settings.Default.banco;
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;
+
+                con.Open();
+
+                cn.CommandText = "SELECT * FROM users WHERE login = @login AND password = @password";
+
+                cn.Connection = con;
+
+                cn.Parameters.Add("login", SqlDbType.VarChar).Value = obj.Login;
+                cn.Parameters.Add("password", SqlDbType.VarChar).Value = obj.Password;
+
+                SqlDataReader dr;                
+                dr = cn.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        UserEnt dado = new UserEnt();                        
+                        dado.Login = Convert.ToString(dr["login"]);
+                        dado.Password = Convert.ToString(dr["password"]);                        
+                    }
+                }
+                else
+                {
+                    obj.Login = null;
+                    obj.Password = null;
+                }
+
+                return obj;
+            }
+        }
+
         public List<UserEnt> Lista()
         {
             using (SqlConnection con = new SqlConnection())
@@ -59,7 +98,6 @@ namespace Sistema.DAO
                         lista.Add(dado);
                     }
                 }
-
                 return lista;
             }
         }

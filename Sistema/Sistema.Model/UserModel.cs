@@ -17,5 +17,10 @@ namespace Sistema.Model
         {
             return new UserDAO().Lista();
         }
+
+        public UserEnt Login(UserEnt obj)
+        {
+            return new UserDAO().Login(obj);
+        }
     }
 }

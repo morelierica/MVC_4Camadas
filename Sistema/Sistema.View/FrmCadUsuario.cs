@@ -24,7 +24,8 @@ namespace Sistema.View
         private void btnNovo_Click(object sender, EventArgs e)
         {
             opc = "Novo";
-            IniciarOpc();            
+            IniciarOpc();
+            txtNome.Focus();
         }
 
         private string opc = "";
@@ -81,6 +82,13 @@ namespace Sistema.View
             txtSenha.Enabled = true;
         }
 
+        private void DesaabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtUsuario.Enabled = false;
+            txtSenha.Enabled = false;
+        }
+
         private void LimparCampos()
         {
             txtNome.Text = "";
@@ -94,6 +102,7 @@ namespace Sistema.View
             IniciarOpc();
             listarGrid();
             LimparCampos();
+            DesaabilitarCampos();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

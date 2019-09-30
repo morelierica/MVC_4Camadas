@@ -30,6 +30,26 @@ namespace Sistema.DAO
             }           
         }
 
+        public int Update(UserEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = Properties.Settings.Default.banco;
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;
+                con.Open();
+                cn.CommandText = "UPDATE users SET name = @name, login = @login, password = @password WHERE id = @id";
+                cn.Parameters.Add("name", SqlDbType.VarChar).Value = objTabela.Name;
+                cn.Parameters.Add("login", SqlDbType.VarChar).Value = objTabela.Login;
+                cn.Parameters.Add("password", SqlDbType.VarChar).Value = objTabela.Password;
+                cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
+                cn.Connection = con;
+
+                int qtd = cn.ExecuteNonQuery();
+                return qtd;
+            }
+        }
+
         public int Delete(UserEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())

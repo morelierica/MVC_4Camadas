@@ -86,6 +86,28 @@ namespace Sistema.View
                     break;
 
                 case "Editar":
+                    try
+                    {
+                        objTabela.Id = Convert.ToInt32(txtCodigo.Text);
+                        objTabela.Name = txtNome.Text;
+                        objTabela.Login = txtUsuario.Text;
+                        objTabela.Password = txtSenha.Text;
+
+                        int x = UserModel.Update(objTabela);
+
+                        if (x > 0)
+                        {
+                            MessageBox.Show(string.Format("Usuário {0} Editado com sucesso!", txtNome.Text), "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao Editar Usuário");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu o seguinte erro ao Editar " + ex.Message);
+                    }
                     break;
 
                 default:
@@ -131,12 +153,16 @@ namespace Sistema.View
             IniciarOpc();
             listarGrid();
             DesaabilitarCampos();
+            LimparCampos();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             opc = "Editar";
             IniciarOpc();
+            DesaabilitarCampos();
+            LimparCampos();
+            listarGrid();
         }
 
         private void listarGrid()

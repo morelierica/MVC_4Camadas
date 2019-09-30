@@ -27,5 +27,10 @@ namespace Sistema.Model
         {
             return new UserDAO().Delete(objTabela);
         }
+
+        public static int Update(UserEnt objTabela)
+        {
+            return new UserDAO().Update(objTabela);
+        }
     }
 }

@@ -43,6 +43,8 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,8 +163,10 @@
             this.grid.Location = new System.Drawing.Point(12, 187);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
+            this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.Size = new System.Drawing.Size(490, 180);
             this.grid.TabIndex = 11;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // id
             // 
@@ -194,11 +198,32 @@
             this.password.Name = "password";
             this.password.ReadOnly = true;
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(95, 25);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(383, 22);
+            this.txtCodigo.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(31, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Código:";
+            // 
             // frmCadUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 447);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnExcluir);
@@ -238,5 +263,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label4;
     }
 }

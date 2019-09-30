@@ -30,6 +30,23 @@ namespace Sistema.DAO
             }           
         }
 
+        public int Delete(UserEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = Properties.Settings.Default.banco;
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;
+                con.Open();
+                cn.CommandText = "DELETE FROM USERS WHERE id = @id";
+                cn.Parameters.Add("id", SqlDbType.Int).Value = objTabela.Id;
+                cn.Connection = con;
+
+                int qtd = cn.ExecuteNonQuery();
+                return qtd;
+            }
+        }
+
         public UserEnt Login(UserEnt obj)
         {
             using (SqlConnection con = new SqlConnection())

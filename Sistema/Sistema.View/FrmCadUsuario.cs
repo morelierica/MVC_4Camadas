@@ -64,6 +64,25 @@ namespace Sistema.View
                     break;
 
                 case "Excluir":
+                    try
+                    {                        
+                        objTabela.Id = Convert.ToInt32(txtCodigo.Text);
+
+                        int x = UserModel.Delete(objTabela);
+
+                        if (x > 0)
+                        {
+                            MessageBox.Show(string.Format("Usuário {0} Excluido com sucesso!", txtNome.Text), "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao Excluir Usuário");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu o seguinte erro ao Excluir " + ex.Message);
+                    }
                     break;
 
                 case "Editar":
@@ -76,14 +95,14 @@ namespace Sistema.View
         }
 
         private void HabilitarCampos()
-        {
+        {            
             txtNome.Enabled = true;
             txtUsuario.Enabled = true;
             txtSenha.Enabled = true;
         }
 
         private void DesaabilitarCampos()
-        {
+        {            
             txtNome.Enabled = false;
             txtUsuario.Enabled = false;
             txtSenha.Enabled = false;
@@ -91,6 +110,7 @@ namespace Sistema.View
 
         private void LimparCampos()
         {
+            txtCodigo.Text = "";
             txtNome.Text = "";
             txtUsuario.Text = "";
             txtSenha.Text = "";
@@ -109,6 +129,8 @@ namespace Sistema.View
         {
             opc = "Excluir";
             IniciarOpc();
+            listarGrid();
+            DesaabilitarCampos();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -137,6 +159,15 @@ namespace Sistema.View
         private void frmCadUsuario_Load(object sender, EventArgs e)
         {
             listarGrid();
+        }
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigo.Text = grid.CurrentRow.Cells[0].Value.ToString();
+            txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
+            txtUsuario.Text = grid.CurrentRow.Cells[2].Value.ToString();
+            txtSenha.Text = grid.CurrentRow.Cells[3].Value.ToString();
+            HabilitarCampos();
         }
     }
 }

@@ -22,5 +22,10 @@ namespace Sistema.Model
         {
             return new UserDAO().Login(obj);
         }
+
+        public static int Delete(UserEnt objTabela)
+        {
+            return new UserDAO().Delete(objTabela);
+        }
     }
 }

@@ -149,6 +149,11 @@ namespace Sistema.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show("Selecione um registro na tabela para excluir", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             opc = "Excluir";
             IniciarOpc();
             listarGrid();

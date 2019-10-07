@@ -30,6 +30,41 @@ namespace Sistema.DAO
             }           
         }
 
+        public List<UserEnt> Search(UserEnt objTabela)
+        {
+            using (SqlConnection con = new SqlConnection())
+            {
+                con.ConnectionString = Properties.Settings.Default.banco;
+                SqlCommand cn = new SqlCommand();
+                cn.CommandType = CommandType.Text;
+                con.Open();
+                cn.CommandText = "SELECT * from users WHERE name = @name";
+                cn.Parameters.Add("name", SqlDbType.VarChar).Value = objTabela.Name;
+
+                cn.Connection = con;
+
+                SqlDataReader dr;
+                List<UserEnt> lista = new List<UserEnt>();
+
+                dr = cn.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        UserEnt dado = new UserEnt();
+                        dado.Id = Convert.ToInt32(dr["id"]);
+                        dado.Name = Convert.ToString(dr["name"]);
+                        dado.Login = Convert.ToString(dr["login"]);
+                        dado.Password = Convert.ToString(dr["password"]);
+
+                        lista.Add(dado);
+                    }
+                }
+                return lista;
+            }
+        }
+
         public int Update(UserEnt objTabela)
         {
             using (SqlConnection con = new SqlConnection())

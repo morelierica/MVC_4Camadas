@@ -110,6 +110,24 @@ namespace Sistema.View
                     }
                     break;
 
+                case "Buscar":
+                    try
+                    {
+                        objTabela.Name = txtBuscar.Text;
+                        List<UserEnt> lista = new List<UserEnt>();
+                        lista = new UserModel().Search(objTabela);
+                        grid.AutoGenerateColumns = false;
+                        grid.DataSource = lista;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        throw;
+                    }
+                    break;
+
+
                 default:
                     break;
             }
@@ -151,7 +169,7 @@ namespace Sistema.View
         {
             if (txtCodigo.Text == "")
             {
-                MessageBox.Show("Selecione um registro na tabela para excluir", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selecione um registro na tabela para Excluir", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             opc = "Excluir";
@@ -163,6 +181,11 @@ namespace Sistema.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show("Selecione um registro na tabela para Editar", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             opc = "Editar";
             IniciarOpc();
             DesaabilitarCampos();
@@ -199,6 +222,13 @@ namespace Sistema.View
             txtUsuario.Text = grid.CurrentRow.Cells[2].Value.ToString();
             txtSenha.Text = grid.CurrentRow.Cells[3].Value.ToString();
             HabilitarCampos();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            opc = "Buscar";
+            IniciarOpc();            
+            LimparCampos();            
         }
     }
 }

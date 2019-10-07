@@ -32,5 +32,10 @@ namespace Sistema.Model
         {
             return new UserDAO().Update(objTabela);
         }
+
+        public List<UserEnt> Search(UserEnt objTabela)
+        {
+            return new UserDAO().Search(objTabela);
+        }
     }
 }

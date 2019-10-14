@@ -38,8 +38,8 @@ namespace Sistema.DAO
                 SqlCommand cn = new SqlCommand();
                 cn.CommandType = CommandType.Text;
                 con.Open();
-                cn.CommandText = "SELECT * from users WHERE name = @name";
-                cn.Parameters.Add("name", SqlDbType.VarChar).Value = objTabela.Name;
+                cn.CommandText = "SELECT * from users WHERE name LIKE @name";
+                cn.Parameters.Add("name", SqlDbType.VarChar).Value = objTabela.Name + "%";
 
                 cn.Connection = con;
 

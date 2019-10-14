@@ -230,5 +230,13 @@ namespace Sistema.View
             IniciarOpc();            
             LimparCampos();            
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                listarGrid();
+            }
+        }
     }
 }

@@ -236,7 +236,12 @@ namespace Sistema.View
             if (txtBuscar.Text == "")
             {
                 listarGrid();
+                return;
             }
+
+            opc = "Buscar";
+            IniciarOpc();
+            
         }
     }
 }

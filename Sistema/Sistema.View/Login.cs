@@ -50,7 +50,7 @@ namespace Sistema.View
                     return;
                 }
 
-                frmCadUsuario form = new frmCadUsuario();
+                FrmCadProdutos form = new FrmCadProdutos();
                 this.Hide();
                 form.Show();                
             }

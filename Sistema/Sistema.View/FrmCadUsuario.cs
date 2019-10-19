@@ -240,8 +240,7 @@ namespace Sistema.View
             }
 
             opc = "Buscar";
-            IniciarOpc();
-            
+            IniciarOpc();            
         }
     }
 }

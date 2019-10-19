@@ -22,7 +22,7 @@ namespace Sistema.DAO
                 cn.CommandText = "INSERT INTO products ([pro_name], [pro_description], [pro_price]) VALUES (@pro_name, @pro_description, @pro_price)";                                 
                 cn.Parameters.Add("pro_name", SqlDbType.VarChar).Value = objTabela.Pro_name;
                 cn.Parameters.Add("pro_description", SqlDbType.VarChar).Value = objTabela.Pro_description;
-                cn.Parameters.Add("pro_price", SqlDbType.VarChar).Value = objTabela.Pro_price;
+                cn.Parameters.Add("pro_price", SqlDbType.Decimal).Value = objTabela.Pro_price;
                 cn.Connection = con;
 
                 int qtd = cn.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace Sistema.DAO
                         dado.Pro_id = Convert.ToInt32(dr["pro_id"]);
                         dado.Pro_name = Convert.ToString(dr["pro_name"]);
                         dado.Pro_description = Convert.ToString(dr["pro_description"]);
-                        dado.Pro_price = Convert.ToDouble(dr["pro_price"]);
+                        dado.Pro_price = Convert.ToDecimal(dr["pro_price"]);
 
                         lista.Add(dado);
                     }
@@ -76,7 +76,7 @@ namespace Sistema.DAO
                 cn.CommandText = "UPDATE products SET pro_name = @pro_name, pro_description = @pro_description, pro_price = @pro_price WHERE pro_id = @pro_id";
                 cn.Parameters.Add("pro_name", SqlDbType.VarChar).Value = objTabela.Pro_name;
                 cn.Parameters.Add("pro_description", SqlDbType.VarChar).Value = objTabela.Pro_description;
-                cn.Parameters.Add("pro_price", SqlDbType.VarChar).Value = objTabela.Pro_price;
+                cn.Parameters.Add("pro_price", SqlDbType.Decimal).Value = objTabela.Pro_price;
                 cn.Parameters.Add("pro_id", SqlDbType.Int).Value = objTabela.Pro_id;
                 cn.Connection = con;
 
@@ -126,7 +126,7 @@ namespace Sistema.DAO
                         dado.Pro_id = Convert.ToInt32(dr["pro_id"]);
                         dado.Pro_name = Convert.ToString(dr["pro_name"]);
                         dado.Pro_description = Convert.ToString(dr["pro_description"]);
-                        dado.Pro_price = Convert.ToDouble(dr["pro_price"]);
+                        dado.Pro_price = Convert.ToDecimal(dr["pro_price"]);
 
                         lista.Add(dado);
                     }

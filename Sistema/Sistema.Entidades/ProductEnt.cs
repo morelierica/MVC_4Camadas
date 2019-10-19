@@ -9,11 +9,11 @@ namespace Sistema.Entidades
         private int pro_id;
         private string pro_name;
         private string pro_description;
-        private double pro_price;
+        private decimal pro_price;
 
         public int Pro_id { get => pro_id; set => pro_id = value; }
         public string Pro_name { get => pro_name; set => pro_name = value; }
         public string Pro_description { get => pro_description; set => pro_description = value; }
-        public double Pro_price { get => pro_price; set => pro_price = value; }
+        public decimal Pro_price { get => pro_price; set => pro_price = value; }
     }
 }

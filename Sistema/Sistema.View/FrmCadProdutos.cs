@@ -82,7 +82,7 @@ namespace Sistema.View
                     {
                         objTabela.Pro_name = txtNome.Text;
                         objTabela.Pro_description = txtDescricao.Text;
-                        objTabela.Pro_price = Convert.ToDouble(txtPreco.Text);
+                        objTabela.Pro_price = Convert.ToDecimal(txtPreco.Text);
 
                         int x = ProductModel.Insert(objTabela);
 
@@ -129,7 +129,7 @@ namespace Sistema.View
                         objTabela.Pro_id = Convert.ToInt32(txtCodigo.Text);
                         objTabela.Pro_name = txtNome.Text;
                         objTabela.Pro_description = txtDescricao.Text;
-                        objTabela.Pro_price = Convert.ToDouble(txtPreco.Text);
+                        objTabela.Pro_price = Convert.ToDecimal(txtPreco.Text);
 
                         int x = ProductModel.Update(objTabela);
 

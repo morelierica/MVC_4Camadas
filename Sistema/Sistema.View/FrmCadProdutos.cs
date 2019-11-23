@@ -55,8 +55,8 @@ namespace Sistema.View
         private void DesaabilitarCampos()
         {
             txtNome.Enabled = false;
-            txtDescricao.Enabled = true;
-            txtPreco.Enabled = true;
+            txtDescricao.Enabled = false;
+            txtPreco.Enabled = false;
         }
 
         private void LimparCampos()
@@ -242,6 +242,13 @@ namespace Sistema.View
 
             opc = "Buscar";
             IniciarOpc();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FrmOpc form = new FrmOpc();
+            this.Hide();
+            form.Show();
         }
     }
 }

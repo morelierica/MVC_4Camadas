@@ -242,5 +242,12 @@ namespace Sistema.View
             opc = "Buscar";
             IniciarOpc();            
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FrmOpc form = new FrmOpc();
+            this.Hide();
+            form.Show();
+        }
     }
 }

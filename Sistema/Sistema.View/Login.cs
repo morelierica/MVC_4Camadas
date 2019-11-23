@@ -50,7 +50,7 @@ namespace Sistema.View
                     return;
                 }
 
-                FrmCadProdutos form = new FrmCadProdutos();
+                FrmOpc form = new FrmOpc();
                 this.Hide();
                 form.Show();                
             }
